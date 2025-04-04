@@ -17,8 +17,7 @@ class UnidadMedidaResource extends Resource
 {
     protected static ?string $model = UnidadMedida::class;
 
-    protected static ?string $navigationGroup = 'Productos';
-    //protected static ?int $navigationSort = 1;
+    protected static ?string $navigationGroup = 'Configuración';
 
     protected static ?string $navigationIcon = 'heroicon-o-bold';
 

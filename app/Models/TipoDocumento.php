@@ -23,8 +23,13 @@ class TipoDocumento extends Model
     ];
 
 
-    public function tipoDocumentos(): HasMany
+    public function proveedor(): HasMany
     {
-        return $this->hasMany(TipoDocumento::class);
+        return $this->hasMany(Proveedor::class);
+    }
+
+    public function cliente(): HasMany
+    {
+        return $this->hasMany(Cliente::class);
     }
 }
