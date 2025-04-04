@@ -28,15 +28,18 @@ class UnidadMedidaResource extends Resource
             ->schema([
                 Forms\Components\TextInput::make('codigo')
                     ->required()
-                    ->maxLength(4),
+                    ->maxLength(4)
+                    ->autocomplete(false),
                 Forms\Components\TextInput::make('descripcion')
                     ->required()
-                    ->maxLength(100),
+                    ->maxLength(100)
+                    ->autocomplete(false),
                 Forms\Components\TextInput::make('simbolo')
                     ->required()
-                    ->maxLength(10),
+                    ->maxLength(10)
+                    ->autocomplete(false),
                 Forms\Components\Toggle::make('estado')
-                    ->required(),
+                    ->default(true),
             ]);
     }
 

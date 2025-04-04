@@ -32,16 +32,23 @@ class ProductoResource extends Resource
             ->schema([
                 Forms\Components\TextInput::make('nombre')
                     ->required()
-                    ->maxLength(100),
+                    ->maxLength(100)
+                    ->autocomplete('off'),
                 Forms\Components\TextInput::make('codigo')
                     ->maxLength(12)
                     ->default(null),
                 Forms\Components\Select::make('categoria_id')
                     ->relationship('categoria', 'nombre')
-                    ->required(),
+                    ->required()
+                    ->searchable()
+                    ->preload()
+                    ->reactive(),
                 Forms\Components\Select::make('unidad_medida_id')
                     ->relationship('unidadMedida', 'descripcion')
-                    ->required(),
+                    ->required()
+                    ->searchable()
+                    ->preload()
+                    ->reactive(),
                 Forms\Components\TextInput::make('precio_compra')
                     ->required()
                     ->numeric(),
@@ -50,9 +57,10 @@ class ProductoResource extends Resource
                     ->numeric(),
                 Forms\Components\TextInput::make('informacion')
                     ->maxLength(250)
-                    ->default(null),
+                    ->default(null)
+                    ->autocomplete(false),
                 Forms\Components\Toggle::make('estado')
-                    ->required(),
+                    ->default(true),
             ]);
     }
 

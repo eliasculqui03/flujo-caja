@@ -28,12 +28,14 @@ class CategoriaResource extends Resource
             ->schema([
                 Forms\Components\TextInput::make('nombre')
                     ->required()
-                    ->maxLength(100),
+                    ->maxLength(100)
+                    ->autocomplete(false),
                 Forms\Components\TextInput::make('decripcion')
                     ->maxLength(250)
-                    ->default(null),
+                    ->default(null)
+                    ->autocomplete(false),
                 Forms\Components\Toggle::make('estado')
-                    ->required(),
+                    ->default(true),
             ]);
     }
 
